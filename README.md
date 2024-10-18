@@ -1,4 +1,4 @@
-# Engenharia Reversa do Firmware de Roteador
+# Engenharia Reversa do Firmware de Roteador TP-Link TL-WR1042ND
 
 ## Visão Geral
 
