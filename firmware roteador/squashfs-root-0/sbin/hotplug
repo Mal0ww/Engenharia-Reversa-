@@ -1,0 +1,28 @@
+#!/bin/sh
+
+if [ "$ACTION" = "add" -a "$1" = "bdi" ] ; then
+	case "$DEVPATH" in
+		*fuseblk)
+			exit 0
+			;;
+	esac
+	`usbp mount`
+	`echo 1 > /tmp/ab`
+fi
+if [ "$ACTION" = "remove" -a "$1" = "scsi_host" ] ; then
+	`usbp umount`
+	`echo 2 > /tmp/ab`
+fi
+
+# for usbip device
+if [ "$ACTION" = "add" -a "$1" = "usb_device" ] ; then
+	if [ -e "/sys/bus/usb/drivers/usbip/1-1:1.0" ] ; then
+		`usbp mount`
+		`echo 3 > /tmp/ab`
+	fi
+fi
+if [ "$ACTION" = "remove" -a "$1" = "usb_device" ] ; then
+	`usbp umount`
+	`echo 4 > /tmp/ab`
+fi
+exit 0

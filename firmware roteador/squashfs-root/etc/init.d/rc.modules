@@ -1,0 +1,60 @@
+#!/bin/sh
+
+# TODO: generate this file when building the image
+
+KERNEL_VER_STR=2.6.30
+
+# netfilter
+insmod /lib/modules/$KERNEL_VER_STR/kernel/xt_MARK.ko
+insmod /lib/modules/$KERNEL_VER_STR/kernel/xt_mark.ko
+insmod /lib/modules/$KERNEL_VER_STR/kernel/xt_TCPMSS.ko
+insmod /lib/modules/$KERNEL_VER_STR/kernel/xt_comment.ko
+insmod /lib/modules/$KERNEL_VER_STR/kernel/xt_iprange.ko
+insmod /lib/modules/$KERNEL_VER_STR/kernel/xt_mac.ko
+insmod /lib/modules/$KERNEL_VER_STR/kernel/xt_multiport.ko
+insmod /lib/modules/$KERNEL_VER_STR/kernel/xt_string.ko
+insmod /lib/modules/$KERNEL_VER_STR/kernel/xt_time.ko
+insmod /lib/modules/$KERNEL_VER_STR/kernel/ipt_multiurl.ko
+
+insmod /lib/modules/$KERNEL_VER_STR/kernel/nf_conntrack_proto_gre.ko
+insmod /lib/modules/$KERNEL_VER_STR/kernel/nf_conntrack_h323.ko
+
+insmod /lib/modules/$KERNEL_VER_STR/kernel/xt_conntrack.ko
+insmod /lib/modules/$KERNEL_VER_STR/kernel/xt_state.ko
+
+# kernel dir: net/ipv4/netfilter/
+
+insmod /lib/modules/$KERNEL_VER_STR/kernel/nf_nat_proto_gre.ko
+
+insmod /lib/modules/$KERNEL_VER_STR/kernel/iptable_filter.ko
+insmod /lib/modules/$KERNEL_VER_STR/kernel/ipt_REDIRECT.ko
+insmod /lib/modules/$KERNEL_VER_STR/kernel/ipt_REJECT.ko
+insmod /lib/modules/$KERNEL_VER_STR/kernel/ipt_TRIGGER.ko
+
+# qos
+insmod /lib/modules/$KERNEL_VER_STR/kernel/sch_htb.ko
+insmod /lib/modules/$KERNEL_VER_STR/kernel/sch_prio.ko
+insmod /lib/modules/$KERNEL_VER_STR/kernel/sch_sfq.ko
+insmod /lib/modules/$KERNEL_VER_STR/kernel/cls_basic.ko
+insmod /lib/modules/$KERNEL_VER_STR/kernel/cls_fw.ko
+
+insmod /lib/modules/$KERNEL_VER_STR/kernel/ts_kmp.ko
+insmod /lib/modules/$KERNEL_VER_STR/kernel/flashid.ko   # XXX
+insmod /lib/modules/$KERNEL_VER_STR/kernel/br_filter.ko
+
+#ppp
+insmod /lib/modules/$KERNEL_VER_STR/kernel/pppol2tp.ko
+insmod /lib/modules/$KERNEL_VER_STR/kernel/pptp.ko
+
+insmod /lib/modules/$KERNEL_VER_STR/kernel/harmony.ko   # XXX
+insmod /lib/modules/$KERNEL_VER_STR/kernel/wlan_warn.ko
+
+#statistics
+insmod /lib/modules/$KERNEL_VER_STR/kernel/statistics.ko
+
+#gpio
+insmod /lib/modules/$KERNEL_VER_STR/kernel/rtl8198_gpio.ko
+
+# TP kernel calls
+insmod /lib/modules/$KERNEL_VER_STR/kernel/tp_kernel_calls.ko
+

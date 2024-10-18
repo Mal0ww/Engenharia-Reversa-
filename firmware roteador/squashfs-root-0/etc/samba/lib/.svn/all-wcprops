@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/SMB/WR841N/!svn/ver/5321/branch/branch_rtl8198_wr1042n_v2.5/rtl819x/users/nas/naspackage/samba/lib
+END
+upcase.dat
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/SMB/WR841N/!svn/ver/5321/branch/branch_rtl8198_wr1042n_v2.5/rtl819x/users/nas/naspackage/samba/lib/upcase.dat
+END
+valid.dat
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/SMB/WR841N/!svn/ver/5321/branch/branch_rtl8198_wr1042n_v2.5/rtl819x/users/nas/naspackage/samba/lib/valid.dat
+END
+lowcase.dat
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/SMB/WR841N/!svn/ver/5321/branch/branch_rtl8198_wr1042n_v2.5/rtl819x/users/nas/naspackage/samba/lib/lowcase.dat
+END
